@@ -62,6 +62,51 @@
   height: 100%;
   border: none;
 }
+
+/* Hero Introduction */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-image {
+  width: 340px;
+  height: 340px;
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  border: 2px solid #477bff;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+  }
+
+  .hero-image {
+    width: min(100%, 340px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    align-self: center;
+  }
+}
     
   </style>
 </head>
@@ -72,14 +117,35 @@
   </nav>
 
   <main>
+   
+<div class="hero">
+
+  <!-- Left Side: Introduction -->
+  <div class="hero-content">
+
     <div class="tag">UNITY • C# • XR • GAMEPLAY</div>
+
     <h1>Hi, I'm Mann.</h1>
+
     <p>
       I'm a Unity Developer with 2+ years of experience
       building interactive games, immersive XR applications,
       and real-time 3D experiences.
     </p>
-    <a class="button" href="#projects">Explore My Work</a>
+
+    <a class="button" href="#projects">
+      Explore My Work
+    </a>
+
+  </div>
+
+  <!-- Right Side: Profile Photo -->
+  <div class="hero-image">
+    <img src="me_new.jpg" alt="Mann Dahiya">
+  </div>
+
+</div>
+
 
     <section id="projects">
       <h2>Featured Projects</h2>
