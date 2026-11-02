@@ -4,404 +4,534 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+  <meta name="description" content="Mann Dahiya - Unity, XR, VR and WebGL Developer portfolio.">
+
   <title>Mann Dahiya | Unity & XR Developer</title>
 
-/* ===== CYBERPUNK PORTFOLIO ===== */
+  <style>
+    /* ===================================
+       CYBERPUNK PORTFOLIO THEME
+    =================================== */
 
-:root {
-  --bg: #090711;
-  --surface: #171022;
-  --purple: #b735ed;
-  --pink: #f04dff;
-  --cyan: #00f5e9;
-  --text: #f5f0ff;
-  --muted: #b9b2c9;
-}
+    :root {
+      --bg: #090711;
+      --surface: #171022;
+      --purple: #b735ed;
+      --pink: #f04dff;
+      --cyan: #00f5e9;
+      --text: #f5f0ff;
+      --muted: #b9b2c9;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  background:
-    radial-gradient(
-      ellipse at 85% 12%,
-      rgba(147, 40, 190, 0.15),
-      transparent 38%
-    ),
-    radial-gradient(
-      ellipse at 10% 65%,
-      rgba(0, 245, 233, 0.05),
-      transparent 35%
-    ),
-    var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          ellipse at 85% 12%,
+          rgba(147, 40, 190, 0.15),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 10% 65%,
+          rgba(0, 245, 233, 0.05),
+          transparent 35%
+        ),
+        var(--bg);
 
-/* Navigation */
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-nav {
-  padding: 24px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(183, 53, 237, 0.35);
-  background: rgba(9, 7, 17, 0.85);
-}
+    /* ===================================
+       NAVIGATION
+    =================================== */
 
-nav strong {
-  font-size: 21px;
-  letter-spacing: 1px;
-  color: var(--text);
-  text-shadow: 0 0 15px rgba(240, 77, 255, 0.4);
-}
+    nav {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  transition: 0.3s;
-}
+      border-bottom: 1px solid rgba(183, 53, 237, 0.35);
+      background: rgba(9, 7, 17, 0.85);
+    }
 
-nav a:hover {
-  color: var(--cyan);
-  text-shadow: 0 0 12px var(--cyan);
-}
+    nav strong {
+      font-size: 21px;
+      letter-spacing: 1px;
+      color: var(--text);
 
-/* Main Layout */
+      text-shadow:
+        0 0 15px rgba(240, 77, 255, 0.4);
+    }
 
-main {
-  max-width: 1150px;
-  margin: auto;
-  padding: 90px 24px;
-}
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
 
-/* Hero */
+    nav a:hover {
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--cyan);
+    }
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 65px;
-  min-height: 420px;
-}
+    /* ===================================
+       MAIN LAYOUT
+    =================================== */
 
-.hero-content {
-  flex: 1;
-  min-width: 0;
-}
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 90px 24px;
+    }
 
-.tag {
-  color: var(--cyan);
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 13px;
-  text-shadow: 0 0 12px rgba(0, 245, 233, 0.4);
-}
+    /* ===================================
+       HERO INTRODUCTION
+    =================================== */
 
-h1 {
-  font-size: clamp(42px, 6vw, 76px);
-  line-height: 1.1;
-  margin: 22px 0;
-  letter-spacing: -2px;
-  background: linear-gradient(
-    90deg,
-    #ffffff 10%,
-    #e9a4ff 65%,
-    #f04dff 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 65px;
+      min-height: 420px;
+    }
 
-p {
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 650px;
-}
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+    }
 
-/* Neon Button */
+    .tag {
+      color: var(--cyan);
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
 
-.button {
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    #a52de0,
-    #e143d7
-  );
-  color: white;
-  padding: 15px 28px;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 24px;
-  box-shadow: 0 0 22px rgba(183, 53, 237, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+      text-shadow:
+        0 0 12px rgba(0, 245, 233, 0.4);
+    }
 
-.button:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 0 18px rgba(240, 77, 255, 0.6),
-    0 0 40px rgba(183, 53, 237, 0.25);
-}
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.1;
+      margin: 22px 0;
+      letter-spacing: -2px;
 
-/* Profile Image */
+      background: linear-gradient(
+        90deg,
+        #ffffff 10%,
+        #e9a4ff 65%,
+        #f04dff 100%
+      );
 
-.hero-image {
-  width: 340px;
-  height: 340px;
-  flex-shrink: 0;
-}
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-  border: 2px solid var(--pink);
-  box-shadow:
-    0 0 18px rgba(240, 77, 255, 0.35),
-    0 0 55px rgba(183, 53, 237, 0.15);
-  transition: transform 0.4s, box-shadow 0.4s;
-}
+    p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 650px;
+    }
 
-.hero-image img:hover {
-  transform: scale(1.025);
-  box-shadow:
-    0 0 25px rgba(240, 77, 255, 0.55),
-    0 0 65px rgba(183, 53, 237, 0.25);
-}
+    /* ===================================
+       NEON BUTTON
+    =================================== */
 
-/* Projects Section */
+    .button {
+      display: inline-block;
 
-section {
-  margin-top: 110px;
-}
+      background: linear-gradient(
+        135deg,
+        #a52de0,
+        #e143d7
+      );
 
-section h2 {
-  font-size: 34px;
-  margin-bottom: 35px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid rgba(183, 53, 237, 0.35);
-}
+      color: #ffffff;
+      padding: 15px 28px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 24px;
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-}
+      box-shadow:
+        0 0 22px rgba(183, 53, 237, 0.3);
 
-/* Project Cards */
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+    }
 
-.project {
-  background: linear-gradient(
-    145deg,
-    #1b1129,
-    #110d1b
-  );
-  padding: 24px;
-  border-radius: 16px;
-  border: 1px solid rgba(183, 53, 237, 0.35);
-  transition:
-    transform 0.3s,
-    border-color 0.3s,
-    box-shadow 0.3s;
-}
+    .button:hover {
+      transform: translateY(-3px);
 
-.project:hover {
-  transform: translateY(-6px);
-  border-color: var(--pink);
-  box-shadow:
-    0 0 22px rgba(183, 53, 237, 0.18),
-    0 12px 30px rgba(0, 0, 0, 0.3);
-}
+      box-shadow:
+        0 0 18px rgba(240, 77, 255, 0.6),
+        0 0 40px rgba(183, 53, 237, 0.25);
+    }
 
-.project h3 {
-  margin: 22px 0 12px;
-  color: var(--text);
-  font-size: 23px;
-}
+    /* ===================================
+       PROFILE PHOTO
+    =================================== */
 
-.project p {
-  font-size: 15px;
-}
+    .hero-image {
+      width: 340px;
+      height: 340px;
+      flex-shrink: 0;
+    }
 
-.project strong {
-  color: var(--cyan);
-}
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
 
-/* Video Embeds */
+      object-fit: cover;
+      object-position: center;
 
-.video-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #05030a;
-  border: 1px solid rgba(0, 245, 233, 0.2);
-}
+      border-radius: 20px;
+      border: 2px solid var(--pink);
 
-.video-container iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+      box-shadow:
+        0 0 18px rgba(240, 77, 255, 0.35),
+        0 0 55px rgba(183, 53, 237, 0.15);
 
-/* Mobile */
+      transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+    }
 
-@media (max-width: 768px) {
-  nav {
-    padding: 20px 6%;
-  }
+    .hero-image img:hover {
+      transform: scale(1.025);
 
-  main {
-    padding: 55px 20px;
-  }
+      box-shadow:
+        0 0 25px rgba(240, 77, 255, 0.55),
+        0 0 65px rgba(183, 53, 237, 0.25);
+    }
 
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-  }
+    /* ===================================
+       PROJECTS SECTION
+    =================================== */
 
-  .hero-image {
-    width: min(100%, 340px);
-    height: auto;
-    aspect-ratio: 1 / 1;
-    align-self: center;
-  }
+    section {
+      margin-top: 110px;
+      scroll-margin-top: 30px;
+    }
 
-  .projects {
-    grid-template-columns: 1fr;
-  }
+    section h2 {
+      font-size: 34px;
+      margin-bottom: 35px;
+      padding-bottom: 15px;
 
-  section {
-    margin-top: 80px;
-  }
+      border-bottom:
+        1px solid rgba(183, 53, 237, 0.35);
+    }
 
-  section h2 {
-    font-size: 28px;
-  }
-}
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+    /* ===================================
+       PROJECT CARDS
+    =================================== */
 
-  .button,
-  .project,
-  .hero-image img {
-    transition: none;
-  }
-}
+    .project {
+      min-width: 0;
 
+      background: linear-gradient(
+        145deg,
+        #1b1129,
+        #110d1b
+      );
+
+      padding: 24px;
+      border-radius: 16px;
+
+      border:
+        1px solid rgba(183, 53, 237, 0.35);
+
+      transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+
+      box-shadow:
+        0 0 22px rgba(183, 53, 237, 0.18),
+        0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project h3 {
+      margin: 22px 0 12px;
+      color: var(--text);
+      font-size: 23px;
+    }
+
+    .project p {
+      font-size: 15px;
+    }
+
+    .project strong {
+      color: var(--cyan);
+    }
+
+    /* ===================================
+       YOUTUBE VIDEO EMBEDS
+    =================================== */
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+
+      border-radius: 10px;
+      background: #05030a;
+
+      border:
+        1px solid rgba(0, 245, 233, 0.2);
+    }
+
+    .video-container iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ===================================
+       MOBILE RESPONSIVE
+    =================================== */
+
+    @media (max-width: 768px) {
+
+      nav {
+        padding: 20px 6%;
+      }
+
+      main {
+        padding: 55px 20px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      .hero-image {
+        width: min(100%, 340px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+        align-self: center;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        margin-top: 80px;
+      }
+
+      section h2 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .tag {
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .project {
+        padding: 16px;
+      }
+
+      .project h3 {
+        font-size: 21px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button,
+      .project,
+      .hero-image img,
+      nav a {
+        transition: none;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
+
+  <!-- ===================================
+       NAVIGATION
+  =================================== -->
+
   <nav>
     <strong>Mann Dahiya</strong>
     <a href="#projects">Projects</a>
   </nav>
 
   <main>
-   
-<div class="hero">
 
-  <!-- Left Side: Introduction -->
-  <div class="hero-content">
+    <!-- ===================================
+         HERO INTRODUCTION
+    =================================== -->
 
-    <div class="tag">UNITY • C# • XR • GAMEPLAY</div>
+    <div class="hero">
 
-    <h1>Hi, I'm Mann.</h1>
+      <!-- Left: Introduction -->
+      <div class="hero-content">
 
-    <p>
-      I'm a Unity Developer with 2+ years of experience
-      building interactive games, immersive XR applications,
-      and real-time 3D experiences.
-    </p>
+        <div class="tag">
+          UNITY • C# • XR • GAMEPLAY
+        </div>
 
-    <a class="button" href="#projects">
-      Explore My Work
-    </a>
+        <h1>Hi, I'm Mann.</h1>
 
-  </div>
+        <p>
+          I'm a Unity Developer with 2+ years of experience
+          building interactive games, immersive XR applications,
+          and real-time 3D experiences.
+        </p>
 
-  <!-- Right Side: Profile Photo -->
-  <div class="hero-image">
-    <img src="me_new.jpeg" alt="Mann Dahiya">
-  </div>
-
-</div>
-
-
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="projects">
-       <div class="project">
-  <div class="video-container">   
-<iframe
-  src="https://www.youtube.com/embed/J2xjW031WKQ"
-  title="VR Fire Safety Training"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-
-  
-
-  </div>
-
-  <h3>VR Fire Safety Training</h3>
-  <p>
-    An immersive VR training application developed in Unity
-    for industrial safety scenarios.
-  </p>
-  <p><strong>Technologies:</strong> Unity, C#, VR</p>
-
-         
-</div>
-       
-<div class="project">
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/hvf9HbejJl4"
-      title="WebGL Basketball Game"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <h3>WebGL Basketball Game</h3>
-
-  <p>
-    A browser-based basketball game developed using Unity
-    WebGL, optimized for fast loading and smooth gameplay.
-  </p>
-
-  <p>
-    <strong>Key Achievement:</strong>
-    Reduced build size from approximately 200 MB to 10 MB.
-  </p>
-
-  <p>
-    <strong>Technologies:</strong> Unity, C#, WebGL
-  </p>
-</div>
+        <a class="button" href="#projects">
+          Explore My Work
+        </a>
 
       </div>
+
+      <!-- Right: Profile Photo -->
+      <div class="hero-image">
+
+        <img
+          src="me_new.jpeg"
+          alt="Portrait of Mann Dahiya"
+          width="340"
+          height="340"
+        >
+
+      </div>
+
+    </div>
+
+    <!-- ===================================
+         FEATURED PROJECTS
+    =================================== -->
+
+    <section id="projects">
+
+      <h2>Featured Projects</h2>
+
+      <div class="projects">
+
+        <!-- PROJECT 1: VR FIRE SAFETY -->
+
+        <div class="project">
+
+          <div class="video-container">
+
+            <iframe
+              src="https://www.youtube.com/embed/J2xjW031WKQ"
+              title="VR Fire Safety Training"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+          <h3>VR Fire Safety Training</h3>
+
+          <p>
+            An immersive VR training application developed
+            in Unity for industrial safety scenarios.
+          </p>
+
+          <p>
+            <strong>Technologies:</strong>
+            Unity, C#, VR
+          </p>
+
+        </div>
+
+        <!-- PROJECT 2: WEBGL BASKETBALL -->
+
+        <div class="project">
+
+          <div class="video-container">
+
+            <iframe
+              src="https://www.youtube.com/embed/hvf9HbejJl4"
+              title="WebGL Basketball Game"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+          <h3>WebGL Basketball Game</h3>
+
+          <p>
+            A browser-based basketball game developed
+            using Unity WebGL, optimized for fast loading
+            and smooth gameplay.
+          </p>
+
+          <p>
+            <strong>Key Achievement:</strong>
+            Reduced build size from approximately
+            200 MB to 10 MB.
+          </p>
+
+          <p>
+            <strong>Technologies:</strong>
+            Unity, C#, WebGL
+          </p>
+
+        </div>
+
+      </div>
+
     </section>
+
   </main>
+
 </body>
 </html>
