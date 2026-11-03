@@ -1,4 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090711"><title>LAN Multiplayer Budget Challenge | Mann Dahiya</title><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+  <meta name="description" content="LAN Multiplayer Budget Challenge - Unity and Mirror networking case study by Mann Dahiya.">
+  <title>LAN Multiplayer Budget Challenge | Mann Dahiya</title>
+  <style>
 
     :root {
       --bg: #090711;
@@ -303,10 +311,27 @@
       border: none;
     }
 
-    .project { display:flex; flex-direction:column; }
-    .project .project-link { margin-top:auto; align-self:flex-start; }
-    .project-link { display:inline-block; color:#fff; text-decoration:none; font-weight:bold; font-size:14px; padding:12px 18px; border-radius:8px; background:linear-gradient(135deg,#a52de0,#e143d7); }
-    .project-link:hover { box-shadow:0 0 18px rgba(240,77,255,.4); }
+    .project {
+      display: flex;
+      flex-direction: column;
+    }
+    .project .project-link {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+    .project-link {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #a52de0, #e143d7);
+    }
+    .project-link:hover {
+      box-shadow: 0 0 18px rgba(240, 77, 255, .4);
+    }
     .project-preview { width:100%; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px; border:1px solid rgba(0,245,233,.25); border-radius:10px; background:radial-gradient(circle at 60% 35%,#34204e,#0c0916 70%); color:var(--cyan); padding:16px; }
     .project-preview span { font-size:38px; }
     .project-preview small { color:var(--muted); }
@@ -396,4 +421,306 @@
       }
     }
 
-  </style></head><body><nav><strong>Mann Dahiya</strong><a href="index.html#projects">Projects</a></nav><main><a class="back-link" href="index.html#projects">← Back to Featured Projects</a><div class="detail-heading"><div class="tag">UNITY • C# • GAME DEVELOPMENT</div><h1>LAN Multiplayer Budget Challenge</h1></div><p>A local-area-network multiplayer budget challenge game. Players make purchasing decisions within a budget and compete through a live leaderboard.</p><section class="detail-section"><h2>About the Game</h2><p>The experience is designed for players on the same local network. It combines purchasing decisions, budget management, and competitive rankings.</p></section><section class="detail-section"><h2>Features I Developed</h2><ul><li>Mirror-based multiplayer networking and real-time game-state synchronization.</li><li>Automatic LAN server discovery.</li><li>Dynamic host election, allowing a device to act as the host.</li><li>Budget-based purchasing gameplay and live leaderboard rankings.</li></ul></section><section class="detail-section"><h2>My Role &amp; Contributions</h2><p>Implemented multiplayer functionality, LAN discovery, host handling, synchronized gameplay, and the budget challenge loop. Add specific architecture details, challenges, and any team credits here.</p></section><section class="detail-section"><h2>Screenshots</h2><div class="gallery"><div class="gallery-placeholder">LAN screenshot 1<br>To be added</div><div class="gallery-placeholder">LAN screenshot 2<br>To be added</div><div class="gallery-placeholder">LAN screenshot 3<br>To be added</div><div class="gallery-placeholder">LAN screenshot 4<br>To be added</div></div></section><section class="detail-section"><h2>Test Report</h2><p>Read the multiplayer testing document for additional implementation and testing details.</p><p><a class="project-link" href="docs/lan-multiplayer-test-report.pdf" target="_blank" rel="noopener">View LAN Test Report (PDF) ↗</a></p><p class="note">Upload your actual report as <code>docs/lan-multiplayer-test-report.pdf</code> before publishing this link. The file is not included yet. A Word document can be linked instead by updating the filename and extension.</p></section></main></body></html>
+  
+    /* ===================================
+       LAN PROJECT DETAILS
+    =================================== */
+
+    .back-link {
+      color: var(--cyan);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 42px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .detail-heading {
+      margin-top: 0;
+    }
+
+    .detail-heading h1 {
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      max-width: 900px;
+      font-size: 17px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .meta-pill {
+      color: var(--cyan);
+      padding: 9px 13px;
+      border-radius: 7px;
+      border: 1px solid rgba(0, 245, 233, .3);
+      background: rgba(0, 245, 233, .04);
+      font-size: 13px;
+    }
+
+    .detail-section {
+      margin-top: 68px;
+    }
+
+    .detail-section h2 {
+      font-size: 29px;
+      margin-bottom: 23px;
+    }
+
+    .detail-section h3 {
+      margin-top: 26px;
+      color: var(--text);
+      font-size: 19px;
+    }
+
+    .detail-section li {
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 9px 0;
+    }
+
+    .detail-section p {
+      max-width: 920px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: linear-gradient(145deg, #1b1129, #110d1b);
+      border: 1px solid rgba(183, 53, 237, .32);
+      padding: 22px;
+      border-radius: 14px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 12px;
+      color: var(--cyan);
+      font-size: 18px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-placeholder {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(0, 245, 233, .5);
+      border-radius: 12px;
+      color: var(--muted);
+      text-align: center;
+      padding: 18px;
+    }
+
+    .note {
+      border-left: 3px solid var(--cyan);
+      padding: 12px 16px;
+      background: #171022;
+      color: var(--muted);
+      max-width: 950px;
+    }
+
+    @media (max-width: 650px) {
+      .feature-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Mann Dahiya</strong>
+    <a href="index.html#projects">Projects</a>
+  </nav>
+
+  <main>
+    <a class="back-link" href="index.html#projects">← Back to Featured Projects</a>
+
+    <!-- PROJECT INTRODUCTION -->
+    <header class="detail-heading">
+      <div class="tag">UNITY • C# • MIRROR NETWORKING</div>
+      <h1>LAN Multiplayer Budget Challenge</h1>
+      <p class="intro">
+        A competitive LAN-based shopping game where participants race against time
+        to make smart purchasing decisions within a configurable budget. The project
+        combines multiplayer data synchronization, dynamic gameplay configuration,
+        persistent results, and a shared leaderboard.
+      </p>
+      <div class="meta-row">
+        <span class="meta-pill">Sole Developer</span>
+        <span class="meta-pill">Unity / C#</span>
+        <span class="meta-pill">Mirror Networking</span>
+        <span class="meta-pill">Client-Provided Art</span>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="detail-section">
+      <h2>About the Game</h2>
+      <p>
+        Players browse a virtual store, add products to their cart, and try to
+        achieve a strong shopping result before the countdown ends. Their purchases
+        are evaluated against configurable spending thresholds, and eligible
+        results contribute to a competitive leaderboard shared over the local network.
+      </p>
+      <p>
+        The game includes configurable item selection, shopping and checkout,
+        animated receipts, performance categories, and synchronized player records.
+      </p>
+    </section>
+
+    <!-- OWNERSHIP -->
+    <section class="detail-section">
+      <h2>My Role &amp; Contributions</h2>
+      <p>
+        I was the <strong>sole developer</strong> responsible for the game's technical
+        implementation, including the networking, gameplay logic, configuration,
+        persistence, user interfaces, and integration. The visual art assets were
+        supplied by the client.
+      </p>
+      <ul>
+        <li>Implemented Mirror networking using SyncVars, Commands, and ClientRpc calls.</li>
+        <li>Built configurable shopping gameplay, timed rounds, checkout, and score evaluation.</li>
+        <li>Developed a 24-item selector with validation and synchronized configuration.</li>
+        <li>Implemented persistent player data and configuration using JSON files and PlayerPrefs.</li>
+        <li>Built the result screens, rank calculation, receipt animations, and UI feedback.</li>
+        <li>Integrated the client-provided artwork into the complete Unity experience.</li>
+      </ul>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="detail-section">
+      <h2>Technical Features</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>LAN Networking &amp; Sync</h3>
+          <p>
+            Mirror SyncVars and hooks distribute player lists and session configuration.
+            Commands submit new results and configuration changes, while RPCs coordinate
+            actions such as leaderboard resets and scene reloads.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Dynamic Item Configuration</h3>
+          <p>
+            A custom UI allows exactly 24 unique products to be selected from an item
+            database. The selection is validated, serialized, and restored from
+            synchronized or locally stored settings.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Reliable Configuration Loading</h3>
+          <p>
+            The game checks live network configuration, cached PlayerPrefs, and a local
+            JSON file. A short initialization wait and fallback item selection help
+            handle delayed configuration during scene loading.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Budget-Based Gameplay</h3>
+          <p>
+            Players add and remove items from their carts while tracking spending
+            and savings. A configurable countdown drives the session, ending in a
+            receipt and performance-based result.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Persistent Leaderboards</h3>
+          <p>
+            Player results are stored locally and synchronized through Mirror.
+            Rankings use configurable eligibility rules, a session timestamp,
+            spending values, and item-count tie handling.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>UI &amp; Presentation</h3>
+          <p>
+            Developed gameplay, configuration, receipt, results, and leaderboard
+            interfaces with Unity UI and TextMeshPro, plus DOTween animations,
+            visual effects, and audio feedback.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ENGINEERING CHALLENGES -->
+    <section class="detail-section">
+      <h2>Engineering Challenges</h2>
+      <h3>Handling late network data</h3>
+      <p>
+        Network configuration can arrive after a Unity scene has initialized.
+        I used synchronization callbacks, cached values, persistent configuration,
+        and a timed initialization wait to avoid starting rounds with missing items.
+      </p>
+      <h3>Keeping game sessions configurable</h3>
+      <p>
+        Rather than hardcoding a single round, I built systems around adjustable
+        budgets, timers, item selections, and scoring thresholds.
+      </p>
+      <h3>Maintaining consistent results</h3>
+      <p>
+        Results are serialized for persistence and submitted to the networked player
+        list. The leaderboard filters results by session and calculates rankings with
+        explicit handling for tied spending and item counts.
+      </p>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="detail-section">
+      <h2>Game Screenshots</h2>
+      <p>Add your actual gameplay and configuration screenshots here.</p>
+      <div class="gallery">
+        <div class="gallery-placeholder">Screenshot 1<br>Shopping gameplay</div>
+        <div class="gallery-placeholder">Screenshot 2<br>Configuration / item selection</div>
+        <div class="gallery-placeholder">Screenshot 3<br>Result screen</div>
+        <div class="gallery-placeholder">Screenshot 4<br>Leaderboard</div>
+      </div>
+    </section>
+
+    <!-- TEST REPORT -->
+    <section class="detail-section">
+      <h2>Multiplayer Test Report</h2>
+      <p>
+        For a closer look at the LAN setup, behavior, and test scenarios,
+        view the accompanying project test report.
+      </p>
+      <a
+        class="project-link"
+        href="docs/lan-multiplayer-test-report.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View LAN Test Report (PDF) ↗
+      </a>
+      <p class="note">
+        Ensure the real report is uploaded at
+        <code>docs/lan-multiplayer-test-report.pdf</code>.
+        This page does not include the PDF file itself.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
