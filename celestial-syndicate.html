@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090711"><title>Celestial Syndicate | Mann Dahiya</title><style>
+
+    :root {
+      --bg: #090711;
+      --surface: #171022;
+      --purple: #b735ed;
+      --pink: #f04dff;
+      --cyan: #00f5e9;
+      --text: #f5f0ff;
+      --muted: #b9b2c9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          ellipse at 85% 12%,
+          rgba(147, 40, 190, 0.15),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 10% 65%,
+          rgba(0, 245, 233, 0.05),
+          transparent 35%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ===================================
+       NAVIGATION
+    =================================== */
+
+    nav {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-bottom: 1px solid rgba(183, 53, 237, 0.35);
+      background: rgba(9, 7, 17, 0.85);
+    }
+
+    nav strong {
+      font-size: 21px;
+      letter-spacing: 1px;
+      color: var(--text);
+
+      text-shadow:
+        0 0 15px rgba(240, 77, 255, 0.4);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--cyan);
+    }
+
+    /* ===================================
+       MAIN LAYOUT
+    =================================== */
+
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 90px 24px;
+    }
+
+    /* ===================================
+       HERO INTRODUCTION
+    =================================== */
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 65px;
+      min-height: 420px;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tag {
+      color: var(--cyan);
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+
+      text-shadow:
+        0 0 12px rgba(0, 245, 233, 0.4);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.1;
+      margin: 22px 0;
+      letter-spacing: -2px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff 10%,
+        #e9a4ff 65%,
+        #f04dff 100%
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 650px;
+    }
+
+    /* ===================================
+       NEON BUTTON
+    =================================== */
+
+    .button {
+      display: inline-block;
+
+      background: linear-gradient(
+        135deg,
+        #a52de0,
+        #e143d7
+      );
+
+      color: #ffffff;
+      padding: 15px 28px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 24px;
+
+      box-shadow:
+        0 0 22px rgba(183, 53, 237, 0.3);
+
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 0 18px rgba(240, 77, 255, 0.6),
+        0 0 40px rgba(183, 53, 237, 0.25);
+    }
+
+    /* ===================================
+       PROFILE PHOTO
+    =================================== */
+
+    .hero-image {
+      width: 340px;
+      height: 340px;
+      flex-shrink: 0;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      border-radius: 20px;
+      border: 2px solid var(--pink);
+
+      box-shadow:
+        0 0 18px rgba(240, 77, 255, 0.35),
+        0 0 55px rgba(183, 53, 237, 0.15);
+
+      transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.025);
+
+      box-shadow:
+        0 0 25px rgba(240, 77, 255, 0.55),
+        0 0 65px rgba(183, 53, 237, 0.25);
+    }
+
+    /* ===================================
+       PROJECTS SECTION
+    =================================== */
+
+    section {
+      margin-top: 110px;
+      scroll-margin-top: 30px;
+    }
+
+    section h2 {
+      font-size: 34px;
+      margin-bottom: 35px;
+      padding-bottom: 15px;
+
+      border-bottom:
+        1px solid rgba(183, 53, 237, 0.35);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    /* ===================================
+       PROJECT CARDS
+    =================================== */
+
+    .project {
+      min-width: 0;
+
+      background: linear-gradient(
+        145deg,
+        #1b1129,
+        #110d1b
+      );
+
+      padding: 24px;
+      border-radius: 16px;
+
+      border:
+        1px solid rgba(183, 53, 237, 0.35);
+
+      transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+
+      box-shadow:
+        0 0 22px rgba(183, 53, 237, 0.18),
+        0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project h3 {
+      margin: 22px 0 12px;
+      color: var(--text);
+      font-size: 23px;
+    }
+
+    .project p {
+      font-size: 15px;
+    }
+
+    .project strong {
+      color: var(--cyan);
+    }
+
+    /* ===================================
+       YOUTUBE VIDEO EMBEDS
+    =================================== */
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+
+      border-radius: 10px;
+      background: #05030a;
+
+      border:
+        1px solid rgba(0, 245, 233, 0.2);
+    }
+
+    .video-container iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .project { display:flex; flex-direction:column; }
+    .project .project-link { margin-top:auto; align-self:flex-start; }
+    .project-link { display:inline-block; color:#fff; text-decoration:none; font-weight:bold; font-size:14px; padding:12px 18px; border-radius:8px; background:linear-gradient(135deg,#a52de0,#e143d7); }
+    .project-link:hover { box-shadow:0 0 18px rgba(240,77,255,.4); }
+    .project-preview { width:100%; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px; border:1px solid rgba(0,245,233,.25); border-radius:10px; background:radial-gradient(circle at 60% 35%,#34204e,#0c0916 70%); color:var(--cyan); padding:16px; }
+    .project-preview span { font-size:38px; }
+    .project-preview small { color:var(--muted); }
+    .back-link { color:var(--cyan); text-decoration:none; }
+    .detail-heading { margin-top:48px; }
+    .detail-section { margin-top:55px; }
+    .detail-section h2 { font-size:25px; }
+    .detail-section li { color:var(--muted); line-height:1.8; margin:7px 0; }
+    .gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .gallery img { display:block; width:100%; border-radius:12px; }
+    .gallery-placeholder { aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; border:1px dashed rgba(0,245,233,.5); border-radius:12px; color:var(--muted); text-align:center; padding:18px; }
+    .note { border-left:3px solid var(--cyan); padding:12px 16px; background:#171022; color:var(--muted); }
+    @media (max-width: 1050px) and (min-width: 769px) { .projects { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 560px) { .gallery { grid-template-columns:1fr; } }
+
+    /* ===================================
+       MOBILE RESPONSIVE
+    =================================== */
+
+    @media (max-width: 768px) {
+
+      nav {
+        padding: 20px 6%;
+      }
+
+      main {
+        padding: 55px 20px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      .hero-image {
+        width: min(100%, 340px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+        align-self: center;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        margin-top: 80px;
+      }
+
+      section h2 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .tag {
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .project {
+        padding: 16px;
+      }
+
+      .project h3 {
+        font-size: 21px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button,
+      .project,
+      .hero-image img,
+      nav a {
+        transition: none;
+      }
+    }
+
+  </style></head><body><nav><strong>Mann Dahiya</strong><a href="index.html#projects">Projects</a></nav><main><a class="back-link" href="index.html#projects">← Back to Featured Projects</a><div class="detail-heading"><div class="tag">UNITY • C# • GAME DEVELOPMENT</div><h1>Celestial Syndicate</h1></div><p>Celestial Syndicate is a survival tycoon game. Add a short, accurate description of the game's objective and core loop here.</p><section class="detail-section"><h2>About the Game</h2><p>Describe the player's objective, progression, and what makes the game engaging.</p></section><section class="detail-section"><h2>Features I Created</h2><p class="note">Add only features you personally developed, such as systems, UI, AI, saving, or optimization, once confirmed.</p></section><section class="detail-section"><h2>My Role &amp; Contributions</h2><p>Describe your responsibilities, the team setup, and the technical challenges you solved.</p></section><section class="detail-section"><h2>Screenshots</h2><div class="gallery"><div class="gallery-placeholder">Celestial Syndicate screenshot 1<br>To be added</div><div class="gallery-placeholder">Celestial Syndicate screenshot 2<br>To be added</div><div class="gallery-placeholder">Celestial Syndicate screenshot 3<br>To be added</div><div class="gallery-placeholder">Celestial Syndicate screenshot 4<br>To be added</div></div></section><section class="detail-section"><h2>Gameplay Video</h2><div class="project-preview"><strong>Celestial Syndicate gameplay video — to be added</strong><small>Replace with a YouTube iframe after uploading your footage</small></div></section></main></body></html>
