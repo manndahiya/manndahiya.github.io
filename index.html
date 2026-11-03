@@ -1,15 +1,24 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090711">
-  <meta name="description" content="Mann Dahiya - Unity, XR, VR and WebGL Developer portfolio.">
+
+  <meta
+    name="description"
+    content="Mann Dahiya - Unity, XR, VR and WebGL Developer portfolio."
+  >
 
   <title>Mann Dahiya | Unity & XR Developer</title>
 
   <style>
+
+    /* ==========================================
+       GLOBAL COLORS AND STYLES
+    ========================================== */
 
     :root {
       --bg: #090711;
@@ -32,6 +41,7 @@
     body {
       margin: 0;
       min-height: 100vh;
+
       background:
         radial-gradient(
           ellipse at 85% 12%,
@@ -49,35 +59,9 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    
-/* LAN MULTIPLAYER COVER IMAGE */
-
-.project-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 245, 233, 0.2);
-  background: #05030a;
-}
-
-.project-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.3s ease;
-}
-
-.project-image:hover img {
-  transform: scale(1.04);
-}
-
-
-    /* ===================================
+    /* ==========================================
        NAVIGATION
-    =================================== */
+    ========================================== */
 
     nav {
       padding: 24px 8%;
@@ -101,7 +85,10 @@
     nav a {
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.3s, text-shadow 0.3s;
+
+      transition:
+        color 0.3s,
+        text-shadow 0.3s;
     }
 
     nav a:hover {
@@ -109,9 +96,9 @@
       text-shadow: 0 0 12px var(--cyan);
     }
 
-    /* ===================================
+    /* ==========================================
        MAIN LAYOUT
-    =================================== */
+    ========================================== */
 
     main {
       max-width: 1150px;
@@ -119,9 +106,9 @@
       padding: 90px 24px;
     }
 
-    /* ===================================
+    /* ==========================================
        HERO INTRODUCTION
-    =================================== */
+    ========================================== */
 
     .hero {
       display: flex;
@@ -170,9 +157,9 @@
       max-width: 650px;
     }
 
-    /* ===================================
-       NEON BUTTON
-    =================================== */
+    /* ==========================================
+       PRIMARY BUTTON
+    ========================================== */
 
     .button {
       display: inline-block;
@@ -206,9 +193,9 @@
         0 0 40px rgba(183, 53, 237, 0.25);
     }
 
-    /* ===================================
+    /* ==========================================
        PROFILE PHOTO
-    =================================== */
+    ========================================== */
 
     .hero-image {
       width: 340px;
@@ -244,9 +231,9 @@
         0 0 65px rgba(183, 53, 237, 0.25);
     }
 
-    /* ===================================
-       PROJECTS SECTION
-    =================================== */
+    /* ==========================================
+       FEATURED PROJECTS SECTION
+    ========================================== */
 
     section {
       margin-top: 110px;
@@ -262,17 +249,25 @@
         1px solid rgba(183, 53, 237, 0.35);
     }
 
+    /* THREE PROJECTS PER ROW */
+
     .projects {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
       gap: 28px;
+      align-items: stretch;
     }
 
-    /* ===================================
-       PROJECT CARDS
-    =================================== */
+    /* ==========================================
+       INDIVIDUAL PROJECT CARDS
+    ========================================== */
 
     .project {
+      display: flex;
+      flex-direction: column;
       min-width: 0;
 
       background: linear-gradient(
@@ -316,9 +311,9 @@
       color: var(--cyan);
     }
 
-    /* ===================================
-       YOUTUBE VIDEO EMBEDS
-    =================================== */
+    /* ==========================================
+       YOUTUBE VIDEOS
+    ========================================== */
 
     .video-container {
       position: relative;
@@ -340,128 +335,84 @@
       border: none;
     }
 
-    /* ===================================
-       PROJECT LINKS AND DETAIL STYLES
-    =================================== */
+    /* ==========================================
+       LAN MULTIPLAYER COVER IMAGE
+    ========================================== */
 
-    .project {
-      display: flex;
-      flex-direction: column;
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+
+      border-radius: 10px;
+      border: 1px solid rgba(0, 245, 233, 0.2);
+      background: #05030a;
     }
 
-    .project .project-link {
-      margin-top: auto;
-      align-self: flex-start;
+    .project-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      transition: transform 0.3s ease;
     }
+
+    .project-image:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ==========================================
+       KNOW MORE BUTTONS
+    ========================================== */
 
     .project-link {
       display: inline-block;
-      color: #fff;
+      align-self: flex-start;
+      margin-top: auto;
+
+      color: #ffffff;
       text-decoration: none;
       font-weight: bold;
       font-size: 14px;
+
       padding: 12px 18px;
       border-radius: 8px;
-      background: linear-gradient(135deg, #a52de0, #e143d7);
+
+      background: linear-gradient(
+        135deg,
+        #a52de0,
+        #e143d7
+      );
+
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
     }
 
     .project-link:hover {
+      transform: translateY(-2px);
       box-shadow: 0 0 18px rgba(240, 77, 255, 0.4);
     }
 
-    .project-preview {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 10px;
-      border: 1px solid rgba(0, 245, 233, 0.25);
-      border-radius: 10px;
-      background: radial-gradient(circle at 60% 35%, #34204e, #0c0916 70%);
-      color: var(--cyan);
-      padding: 16px;
-    }
+    /* ==========================================
+       TABLET RESPONSIVE
+    ========================================== */
 
-    .project-preview span {
-      font-size: 38px;
-    }
+    @media (max-width: 1050px) {
 
-    .project-preview small {
-      color: var(--muted);
-    }
-
-    .back-link {
-      color: var(--cyan);
-      text-decoration: none;
-    }
-
-    .detail-heading {
-      margin-top: 48px;
-    }
-
-    .detail-section {
-      margin-top: 55px;
-    }
-
-    .detail-section h2 {
-      font-size: 25px;
-    }
-
-    .detail-section li {
-      color: var(--muted);
-      line-height: 1.8;
-      margin: 7px 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .gallery img {
-      display: block;
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .gallery-placeholder {
-      aspect-ratio: 16 / 9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px dashed rgba(0, 245, 233, 0.5);
-      border-radius: 12px;
-      color: var(--muted);
-      text-align: center;
-      padding: 18px;
-    }
-
-    .note {
-      border-left: 3px solid var(--cyan);
-      padding: 12px 16px;
-      background: #171022;
-      color: var(--muted);
-    }
-
-    @media (max-width: 1050px) and (min-width: 769px) {
       .projects {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
       }
+
     }
 
-    @media (max-width: 560px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ===================================
+    /* ==========================================
        MOBILE RESPONSIVE
-    =================================== */
+    ========================================== */
 
     @media (max-width: 768px) {
 
@@ -497,6 +448,7 @@
       section h2 {
         font-size: 28px;
       }
+
     }
 
     @media (max-width: 480px) {
@@ -517,7 +469,12 @@
       .project h3 {
         font-size: 21px;
       }
+
     }
+
+    /* ==========================================
+       ACCESSIBILITY
+    ========================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -527,35 +484,43 @@
 
       .button,
       .project,
+      .project-image img,
       .hero-image img,
+      .project-link,
       nav a {
         transition: none;
       }
+
     }
 
   </style>
+
 </head>
 
 <body>
 
-  <!-- ===================================
+  <!-- ==========================================
        NAVIGATION
-  =================================== -->
+  ========================================== -->
 
   <nav>
+
     <strong>Mann Dahiya</strong>
-    <a href="#projects">Projects</a>
+
+    <a href="#projects">
+      Projects
+    </a>
+
   </nav>
 
   <main>
 
-    <!-- ===================================
+    <!-- ========================================
          HERO INTRODUCTION
-    =================================== -->
+    ======================================== -->
 
     <div class="hero">
 
-      <!-- Left: Introduction -->
       <div class="hero-content">
 
         <div class="tag">
@@ -576,7 +541,8 @@
 
       </div>
 
-      <!-- Right: Profile Photo -->
+      <!-- PROFILE PHOTO -->
+
       <div class="hero-image">
 
         <img
@@ -590,9 +556,9 @@
 
     </div>
 
-    <!-- ===================================
+    <!-- ========================================
          FEATURED PROJECTS
-    =================================== -->
+    ======================================== -->
 
     <section id="projects">
 
@@ -600,9 +566,15 @@
 
       <div class="projects">
 
-        <!-- PROJECT 1: VR FIRE SAFETY -->
+
+        <!-- ====================================
+             PROJECT 1: VR FIRE SAFETY
+        ==================================== -->
+
         <div class="project">
+
           <div class="video-container">
+
             <iframe
               src="https://www.youtube.com/embed/J2xjW031WKQ"
               title="VR Fire Safety Training"
@@ -611,42 +583,80 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
+
           </div>
 
           <h3>VR Fire Safety Training</h3>
+
           <p>
-            An immersive VR training application developed in Unity
-            for industrial safety scenarios.
+            An immersive VR training application developed
+            in Unity for industrial safety scenarios.
           </p>
-          <p><strong>Technologies:</strong> Unity, C#, VR</p>
+
+          <p>
+            <strong>Technologies:</strong>
+            Unity, C#, VR
+          </p>
+
         </div>
 
-        <!-- PROJECT 2: LAN MULTIPLAYER -->
-       
-<div class="project-image">
-  <img
-    src="images/lan-multiplayer/cover.png"
-    alt="LAN Multiplayer Budget Challenge gameplay preview"
-    loading="lazy"
-  >
-</div>
 
+        <!-- ====================================
+             PROJECT 2: LAN MULTIPLAYER
+        ==================================== -->
+
+        <div class="project">
+
+          <!-- LAN COVER IMAGE -->
+
+          <div class="project-image">
+
+            <img
+              src="images/lan-multiplayer/cover.png"
+              alt="LAN Multiplayer Budget Challenge gameplay preview"
+              loading="lazy"
+            >
+
+          </div>
 
           <h3>LAN Multiplayer Budget Challenge</h3>
-          <p>
-            A local-network multiplayer experience featuring automatic
-            server discovery and synchronized gameplay.
-          </p>
-          <p><strong>Technologies:</strong> Unity, C#, Mirror</p>
 
-          <a class="project-link" href="lan-multiplayer.html">
+          <p>
+            A LAN-based competitive shopping game featuring
+            synchronized player data, configurable gameplay,
+            persistent results, and multiplayer leaderboards.
+          </p>
+
+          <p>
+            <strong>Role:</strong>
+            Sole Developer
+          </p>
+
+          <p>
+            <strong>Technologies:</strong>
+            Unity, C#, Mirror
+          </p>
+
+          <a
+            class="project-link"
+            href="lan-multiplayer.html"
+          >
             Know More →
           </a>
+
         </div>
 
-        <!-- PROJECT 3: CELESTIAL SYNDICATE -->
+
+        <!-- ====================================
+             PROJECT 3: CELESTIAL SYNDICATE
+        ==================================== -->
+
         <div class="project">
+
+          <!-- GAMEPLAY VIDEO -->
+
           <div class="video-container">
+
             <iframe
               src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
               title="Celestial Syndicate Gameplay"
@@ -655,22 +665,39 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
+
           </div>
 
           <h3>Celestial Syndicate</h3>
-          <p>
-            Explore the game's premise, mechanics, and my development contributions.
-          </p>
-          <p><strong>Details:</strong> Project page in progress</p>
 
-          <a class="project-link" href="celestial-syndicate.html">
+          <p>
+            A tycoon simulation game featuring interactive
+            management and progression mechanics.
+          </p>
+
+          <p>
+            <strong>Details:</strong>
+            Project page in progress
+          </p>
+
+          <a
+            class="project-link"
+            href="celestial-syndicate.html"
+          >
             Know More →
           </a>
+
         </div>
 
-        <!-- PROJECT 4: WEBGL BASKETBALL -->
+
+        <!-- ====================================
+             PROJECT 4: WEBGL BASKETBALL
+        ==================================== -->
+
         <div class="project">
+
           <div class="video-container">
+
             <iframe
               src="https://www.youtube.com/embed/hvf9HbejJl4"
               title="WebGL Basketball Game"
@@ -679,19 +706,30 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
+
           </div>
 
           <h3>WebGL Basketball Game</h3>
+
           <p>
-            A browser-based basketball game developed using Unity WebGL,
-            optimized for fast loading and smooth gameplay.
+            A browser-based basketball game developed using
+            Unity WebGL, optimized for fast loading and
+            smooth gameplay.
           </p>
+
           <p>
             <strong>Key Achievement:</strong>
-            Reduced build size from approximately 200 MB to 10 MB.
+            Reduced build size from approximately
+            200 MB to 10 MB.
           </p>
-          <p><strong>Technologies:</strong> Unity, C#, WebGL</p>
+
+          <p>
+            <strong>Technologies:</strong>
+            Unity, C#, WebGL
+          </p>
+
         </div>
+
 
       </div>
 
@@ -700,4 +738,5 @@
   </main>
 
 </body>
+
 </html>
