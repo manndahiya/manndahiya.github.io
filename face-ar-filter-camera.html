@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090711">
-  <meta name="description" content="Face AR Filter Camera - Unity WebAR experience and API integration by Mann Dahiya.">
+  <meta name="description" content="Face AR Filter Camera - Unity WebAR face filters, photo capture, and API integration by Mann Dahiya.">
   <title>Face AR Filter Camera | Mann Dahiya</title>
   <style>
     :root {
@@ -78,9 +78,12 @@
     }
     .feature-card h3 { color: var(--cyan); font-size: 19px; margin: 0 0 12px; }
     .feature-card p { margin: 0; font-size: 14px; }
+    .process { margin: 0; padding-left: 24px; }
+    .process li { color: var(--muted); line-height: 1.85; margin-bottom: 11px; }
+    .process strong { color: var(--text); }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       align-items: start;
     }
@@ -102,7 +105,8 @@
       background: rgba(23, 16, 34, .8);
     }
     .challenge h3 { margin: 0 0 12px; font-size: 19px; }
-    .challenge p { margin: 0; }
+    .challenge p { margin: 0 0 14px; }
+    .challenge p:last-child { margin-bottom: 0; }
     @media (max-width: 850px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 650px) {
       nav { padding: 20px 6%; }
@@ -110,6 +114,7 @@
       section { margin-top: 55px; }
       section h2 { font-size: 25px; }
       .feature-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; max-width: 380px; }
     }
   </style>
 </head>
@@ -124,70 +129,85 @@
       <div class="tag">UNITY • C# • WEBAR • FACE TRACKING</div>
       <h1>Face AR Filter Camera</h1>
       <p class="intro">
-        An interactive WebAR camera experience where users choose a team,
-        swipe between its face filters, capture a photo, and optionally save
-        or submit the result. The experience combines real-time face tracking,
-        responsive filter navigation, and API-based photo submission.
+        An interactive WebAR photo experience where users select a team, explore its face filters,
+        adjust filter transparency, and capture a team-branded photo. The experience supports
+        local image saving and form-based photo submission through a REST API.
       </p>
       <div class="meta-row">
         <span class="meta-pill">WebAR Foundation</span>
         <span class="meta-pill">Face Tracking</span>
-        <span class="meta-pill">Swipeable Filter UI</span>
-        <span class="meta-pill">REST API Integration</span>
+        <span class="meta-pill">Custom Filter UI</span>
+        <span class="meta-pill">Screenshot Capture</span>
+        <span class="meta-pill">REST API</span>
       </div>
     </header>
+
+    <section>
+      <h2>How It Works</h2>
+      <ol class="process">
+        <li><strong>Choose a team:</strong> The app presents a team-specific set of face-filter materials.</li>
+        <li><strong>Browse and adjust filters:</strong> Users swipe through filters with snap-to-selection navigation and adjust the active filter's opacity using a slider.</li>
+        <li><strong>Capture a photo:</strong> A screenshot tool captures the webcam-based AR view at the intended portrait framing, with the selected team's logo/frame added at the bottom.</li>
+        <li><strong>Review and save:</strong> Users can preview the photo, retry, or confirm and save it locally. They can also submit it to the API with their validated form details and consent.</li>
+      </ol>
+    </section>
 
     <section>
       <h2>What I Developed</h2>
       <div class="feature-grid">
         <article class="feature-card">
           <h3>Team-Based Face Filters</h3>
-          <p>Connected team selection to the appropriate face-filter materials using WebAR Foundation and a team/material mapping.</p>
+          <p>Connected team selection to corresponding face-filter materials using WebAR Foundation and a team-to-material mapping.</p>
         </article>
         <article class="feature-card">
-          <h3>Swipe &amp; Snap Navigation</h3>
-          <p>Built a custom ScrollRect controller with swipe thresholds, smooth snapping, active-filter emphasis, and a reusable selection ring.</p>
+          <h3>Swipe, Snap &amp; Opacity Controls</h3>
+          <p>Built custom ScrollRect navigation with smooth snapping, active selection indicators, and a transparency slider that adjusts the selected material's alpha.</p>
         </article>
         <article class="feature-card">
-          <h3>Photo Capture &amp; Local Save</h3>
-          <p>Implemented the capture, preview, retry, confirmation and local-save flow, including the selected team’s photo frame overlay.</p>
+          <h3>Webcam Screenshot &amp; Team Branding</h3>
+          <p>Integrated screenshot-based photo capture with AR camera framing, portrait output, team-logo overlays, preview, retry, and local save functionality.</p>
         </article>
         <article class="feature-card">
-          <h3>API Submission &amp; Form Validation</h3>
-          <p>Validated name, email and consent fields; packaged the captured image as Base64-encoded PNG within JSON; and submitted it through UnityWebRequest.</p>
+          <h3>Form Validation &amp; API Upload</h3>
+          <p>Handled form validation and consent, then sent user details and the captured PNG as Base64 data in a JSON payload through UnityWebRequest.</p>
         </article>
       </div>
     </section>
 
     <section>
       <h2>App Screenshots</h2>
-      <p>Portrait (9:16) views of the selection and photo experience.</p>
+      <p>Portrait (9:16) views of the face-filter and photo experience.</p>
       <div class="gallery">
         <figure>
-          <img src="images/face-ar-1.png" alt="Face AR live filters" loading="lazy">
-          <figcaption>Live Face Filters</figcaption>
+          <img src="images/face-ar-1.png" alt="Face AR team filter selection" loading="lazy">
+          <figcaption>Team Filters</figcaption>
         </figure>
         <figure>
-          <img src="images/face-ar-2.png" alt="Face AR live filters" loading="lazy">
-          <figcaption>Live Face Filters</figcaption>
+          <img src="images/face-ar-2.png" alt="Face AR filter opacity adjustment" loading="lazy">
+          <figcaption>Live AR Filters</figcaption>
         </figure>
         <figure>
-          <img src="images/face-ar-3.png" alt="Face AR save & submission" loading="lazy">
-          <figcaption>Photo Preview & Submission</figcaption>
+          <img src="images/face-ar-3.png" alt="Face AR captured photo with team branding" loading="lazy">
+          <figcaption>Photo Preview &amp; Submission</figcaption>
         </figure>
       </div>
     </section>
 
     <section>
-      <h2>Development Challenges</h2>
+      <h2>Main Development Challenge</h2>
       <div class="challenge">
-        <h3>Keeping Camera, Filters and Capture in Sync</h3>
+        <h3>High-Quality Screenshot Capture with Correct Framing</h3>
         <p>
-          The main integration challenge was coordinating the active team,
-          swipable filter selection, camera capture, preview and submission states.
-          I managed these transitions using UI events, filter-state changes and
-          a dedicated photo manager so users could retake a photo without losing
-          the ability to browse filters.
+          The biggest challenge was capturing a clean, high-resolution portrait image from the
+          live webcam-based AR view using a screenshot tool, rather than taking a conventional
+          camera photograph. The captured result had to maintain the correct aspect ratio and
+          include the selected team's logo at the bottom.
+        </p>
+        <p>
+          I coordinated the webcam view's screen-space bounds, screenshot framing, and branded
+          overlay visibility so the final image matched what users expected to see. The capture
+          flow also had to support previewing, retrying, and saving without leaving the AR
+          interface in an inconsistent state.
         </p>
       </div>
     </section>
