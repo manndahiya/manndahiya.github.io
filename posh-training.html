@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+  <meta name="description" content="POSH Workplace Training Simulation - an interactive Unity dialogue and environment lighting case study by Mann Dahiya.">
+  <title>POSH Workplace Training Simulation | Mann Dahiya</title>
+  <style>
+    :root {
+      --bg: #090711;
+      --surface: #171022;
+      --purple: #b735ed;
+      --pink: #f04dff;
+      --cyan: #00f5e9;
+      --text: #f5f0ff;
+      --muted: #b9b2c9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 85% 12%, rgba(147, 40, 190, .15), transparent 38%),
+        radial-gradient(ellipse at 10% 65%, rgba(0, 245, 233, .05), transparent 35%),
+        var(--bg);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      border-bottom: 1px solid rgba(183, 53, 237, .35);
+      background: rgba(9, 7, 17, .85);
+    }
+    nav strong { font-size: 21px; letter-spacing: 1px; text-shadow: 0 0 15px rgba(240, 77, 255, .4); }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover { color: var(--cyan); }
+    main { max-width: 1100px; margin: 0 auto; padding: 80px 24px 110px; }
+    .back-link { display: inline-block; margin-bottom: 48px; color: var(--cyan); text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
+    .tag { color: var(--cyan); font-size: 13px; font-weight: bold; letter-spacing: 2px; }
+    h1 {
+      margin: 20px 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      background: linear-gradient(90deg, #fff 10%, #e9a4ff 65%, #f04dff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    p { color: var(--muted); line-height: 1.8; font-size: 16px; }
+    .intro { max-width: 850px; font-size: 17px; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .meta-pill {
+      padding: 9px 14px;
+      color: var(--cyan);
+      font-size: 13px;
+      border-radius: 7px;
+      background: rgba(0, 245, 233, .04);
+      border: 1px solid rgba(0, 245, 233, .3);
+    }
+    section { margin-top: 75px; }
+    section h2 {
+      font-size: 29px;
+      margin-bottom: 22px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(183, 53, 237, .35);
+    }
+    .video-container {
+      width: 100%;
+      max-width: 950px;
+      aspect-ratio: 16 / 9;
+      margin: 28px auto 0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #05030a;
+      border: 1px solid rgba(183, 53, 237, .5);
+      box-shadow: 0 0 25px rgba(183, 53, 237, .12);
+    }
+    .video-container iframe { display: block; width: 100%; height: 100%; border: none; }
+    .video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--cyan);
+      text-align: center;
+      padding: 24px;
+      background: radial-gradient(circle, #29203b, #05030a 75%);
+    }
+    .video-placeholder span { font-size: 34px; }
+    .video-placeholder small { color: var(--muted); }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .feature-card {
+      padding: 24px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #1b1129, #110d1b);
+      border: 1px solid rgba(183, 53, 237, .35);
+    }
+    .feature-card h3 { margin: 0 0 12px; font-size: 19px; color: var(--cyan); }
+    .feature-card p { margin: 0; font-size: 14px; }
+    .challenge-card {
+      padding: 24px;
+      border-radius: 8px;
+      background: rgba(23, 16, 34, .8);
+      border-left: 3px solid var(--purple);
+    }
+    .challenge-card h3 { margin: 0 0 12px; font-size: 19px; }
+    .challenge-card p { margin: 0 0 14px; }
+    .challenge-card p:last-child { margin-bottom: 0; }
+    .takeaway {
+      padding: 24px;
+      border: 1px solid rgba(0, 245, 233, .25);
+      border-radius: 12px;
+      background: rgba(0, 245, 233, .04);
+    }
+    .takeaway p { margin: 0; }
+    @media (max-width: 768px) {
+      nav { padding: 20px 6%; }
+      main { padding: 55px 20px 80px; }
+      section { margin-top: 55px; }
+      section h2 { font-size: 25px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-card, .challenge-card { padding: 20px; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 42px; }
+      .tag { font-size: 11px; letter-spacing: 1px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Mann Dahiya</strong>
+    <a href="index.html#projects">Projects</a>
+  </nav>
+  <main>
+    <a class="back-link" href="index.html#projects">← Back to Featured Projects</a>
+    <header>
+      <div class="tag">UNITY • C# • DIALOGUE SYSTEMS • LIGHTING</div>
+      <h1>POSH Workplace Training Simulation</h1>
+      <p class="intro">
+        An interactive training experience about workplace conduct and POSH (Prevention of Sexual Harassment).
+        Players navigate realistic conversations, select responses, and receive feedback based on their decisions.
+        I worked on the dialogue experience, character presentation, and lighting of the 3D environments.
+      </p>
+      <div class="meta-row">
+        <span class="meta-pill">Interactive Dialogue</span>
+        <span class="meta-pill">SALSA LipSync</span>
+        <span class="meta-pill">Baked Lighting</span>
+        <span class="meta-pill">Light &amp; Reflection Probes</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Gameplay Demonstration</h2>
+      <!-- Replace this placeholder when the YouTube video URL is available.
+           Example:
+           <div class="video-container">
+             <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="POSH Training Gameplay" loading="lazy" allowfullscreen></iframe>
+           </div>
+      -->
+      <div class="video-container video-placeholder">
+        <span aria-hidden="true">▶</span>
+        <strong>POSH Training Gameplay</strong>
+        <small>YouTube demonstration to be added</small>
+      </div>
+    </section>
+
+    <section>
+      <h2>What I Developed</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Dialogue &amp; Player Choices</h3>
+          <p>Built a node-based dialogue flow with voice clips, typewriter subtitles, selectable responses, and correct, neutral, or incorrect choice evaluation.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Multiple Conversation Formats</h3>
+          <p>Supported in-person character dialogue, workplace chat, and messaging-style interactions through different dialogue presentation modes.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Voice &amp; Lip Synchronization</h3>
+          <p>Integrated SALSA LipSync to coordinate character mouth movements with recorded vocals, alongside synchronized dialogue audio and subtitles.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Scenario Feedback &amp; Progress</h3>
+          <p>Implemented response-based narration and visual completion indicators for training scenarios using saved progression states.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Baked Environment Lighting</h3>
+          <p>Set up and refined baked illumination using area and spot lights to create convincing workplace environments while keeping lighting efficient at runtime.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Lighting &amp; Reflection Probes</h3>
+          <p>Configured light probes and reflection probes to improve how characters, moving objects, and reflective materials fit into the baked environments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Main Development Challenge</h2>
+      <div class="challenge-card">
+        <h3>Fixing Baked-Lightmap Artifacts</h3>
+        <p>
+          While baking the lighting, some walls and models developed unwanted dark patches,
+          uneven shading, and texture-like lighting artifacts. The challenge was to clean up
+          the baked result without compromising the atmosphere of the scene.
+        </p>
+        <p>
+          I resolved the affected areas by generating proper lightmap UVs and coordinating
+          with the artist to correct incorrectly facing mesh normals on certain models.
+          I also checked the bake setup and re-baked the scenes to verify the improvements.
+        </p>
+        <p>
+          This reinforced the importance of clean mesh data and dedicated lightmap UVs.
+          Overlapping UVs, insufficient UV padding, and low lightmap resolution are common
+          issues to investigate when baked lighting produces artifacts.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Takeaway</h2>
+      <div class="takeaway">
+        <p>
+          The project combined gameplay programming with technical presentation work.
+          It strengthened my ability to build interactive narrative systems, synchronize
+          voice and character animation, and troubleshoot baked-lighting issues in Unity.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
