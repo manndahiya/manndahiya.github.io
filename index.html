@@ -626,6 +626,82 @@
       .hero-social-link { transition: none; }
     }
 
+
+    /* ==========================================
+       SKILLS & EDUCATION
+    ========================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .about-label {
+      margin: 0 0 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 8px 14px;
+      border: 1px solid rgba(183, 53, 237, .24);
+      border-radius: 999px;
+      background: #1d1c2a;
+      color: #d7d2e7;
+      font-size: 13px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .education-entry {
+      border-left: 2px solid rgba(183, 53, 237, .45);
+      padding: 2px 0 2px 17px;
+    }
+
+    .education-entry h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .education-entry p {
+      margin: 0 0 8px;
+      max-width: none;
+      line-height: 1.5;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .education-date {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    @media (max-width: 850px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 480px) {
+      .skill-tags { gap: 8px; }
+      .skill-tag { padding: 8px 12px; font-size: 12px; }
+    }
+
   </style>
 
 </head>
@@ -1042,6 +1118,43 @@
 
       </div>
 
+    </section>
+
+
+    <!-- ========================================
+         SKILLS & EDUCATION
+    ======================================== -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">Skills &amp; Education</h2>
+      <div class="about-grid">
+        <div>
+          <h3 class="about-label">Top Skills</h3>
+          <div class="skill-tags" aria-label="Technical skills">
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Gameplay Programming</span>
+            <span class="skill-tag">Game Systems Architecture</span>
+            <span class="skill-tag">Mirror Networking</span>
+            <span class="skill-tag">WebGL</span>
+            <span class="skill-tag">VR / XR</span>
+            <span class="skill-tag">AR Face Tracking</span>
+            <span class="skill-tag">REST API Integration</span>
+            <span class="skill-tag">JSON Save / Load</span>
+            <span class="skill-tag">Performance Optimization</span>
+            <span class="skill-tag">Unity UI</span>
+            <span class="skill-tag">Baked Lighting</span>
+            <span class="skill-tag">Git / GitHub</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="about-label">Education</h3>
+          <div class="education-entry">
+            <h3>B.E. in Information Technology</h3>
+            <p>Charutar Vidya Mandal University</p>
+            <div class="education-date">2020 – 2024 <span aria-hidden="true">·</span> CGPA: 8.49</div>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
