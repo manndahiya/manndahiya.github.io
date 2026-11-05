@@ -526,6 +526,26 @@
     }
 
 
+    /* FACE AR: show the complete portrait screenshot inside the card */
+    .ar-banner {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #05030a;
+      border: 1px solid rgba(0, 245, 233, 0.2);
+      border-radius: 10px;
+    }
+
+    .ar-banner img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
     /* VIDEO PLACEHOLDERS: REPLACE WITH YOUTUBE IFRAMES WHEN READY */
     .video-placeholder {
       display: flex;
@@ -858,33 +878,36 @@
 
         <div class="project">
 
-          <!-- Replace this placeholder with a YouTube iframe
-               when you have the Face AR video link. -->
-          <div class="video-container video-placeholder">
-            <span aria-hidden="true">▶</span>
-            <strong>Face AR Filter Camera</strong>
-            <small>Gameplay demonstration video coming soon</small>
+          <!-- Portrait screenshot displayed without cropping -->
+          <div class="ar-banner">
+            <img
+              src="images/face-ar-banner.png"
+              alt="Face AR Filter Camera with team-based face filters"
+              loading="lazy"
+            >
           </div>
 
           <h3>Face AR Filter Camera</h3>
 
           <p>
-            A real-time face AR camera experience featuring
-            interactive visual filters and augmented reality effects.
+            A WebAR face-filter camera that lets users choose a team,
+            browse matching face effects, capture a photo, and save it.
           </p>
 
           <div class="achievement">
             <strong>Technical Highlights:</strong>
             <ul>
-              <li>Real-Time Face AR Effects</li>
-              <li>Camera-Based AR Experience</li>
-              <li>Interactive Visual Filters</li>
+              <li>WebAR Foundation Face Tracking</li>
+              <li>Team-Based Dynamic Material Filters</li>
+              <li>Swipe Navigation &amp; Snap-to-Filter UI</li>
+              <li>Photo Capture &amp; Local Save</li>
+              <li>REST API Integration (Form Data &amp; Image Upload)</li>
             </ul>
           </div>
 
           <p>
             <strong>Technologies:</strong>
-            Unity, C#, AR
+            Unity, C#, WebAR Foundation, UnityWebRequest
           </p>
 
           <a class="project-link" href="face-ar-filter-camera.html">
