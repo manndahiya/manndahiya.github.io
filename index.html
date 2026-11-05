@@ -568,6 +568,64 @@
       font-size: 12px;
     }
 
+  
+    /* Readable, even-edged body copy across all project pages */
+    p, .process li {
+      text-align: justify;
+      text-align-last: left;
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+
+    /* Contact links below the hero CTA */
+    .hero-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .hero-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 42px;
+      padding: 10px 14px;
+      border: 1px solid rgba(183, 53, 237, .42);
+      border-radius: 9px;
+      background: rgba(23, 16, 34, .72);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .hero-social-link svg {
+      width: 18px;
+      height: 18px;
+      flex: none;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hero-social-link:hover, .hero-social-link:focus-visible {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      background: rgba(0, 245, 233, .07);
+      transform: translateY(-2px);
+    }
+    .hero-social-link:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+    @media (max-width: 480px) {
+      .hero-links { gap: 9px; }
+      .hero-social-link { padding: 10px 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-social-link { transition: none; }
+    }
+
   </style>
 
 </head>
@@ -613,6 +671,23 @@
         <a class="button" href="#projects">
           Explore My Work
         </a>
+
+        <!-- Professional contact links -->
+        <div class="hero-links" aria-label="Professional links">
+          <a class="hero-social-link" href="https://www.linkedin.com/in/mann2002/" target="_blank" rel="noopener noreferrer" aria-label="View LinkedIn profile (opens in a new tab)">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"></rect><path d="M7 10v7M7 7v.01M11 17v-7h3v1.2c.6-.9 1.4-1.4 2.5-1.4 2 0 2.5 1.3 2.5 3.5V17M11 13v-3"></path></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="hero-social-link" href="docs/Mann_GameDev_CV_Final.pdf" target="_blank" rel="noopener noreferrer" aria-label="View résumé PDF (opens in a new tab)">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8"></path></svg>
+            <span>View Résumé</span>
+          </a>
+          <a class="hero-social-link" href="mailto:mannlakra10@gmail.com?subject=Portfolio%20Inquiry" aria-label="Send email to mannlakra10@gmail.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m3 6 9 7 9-7"></path></svg>
+            <span>Email</span>
+          </a>
+        </div>
+
 
       </div>
 
