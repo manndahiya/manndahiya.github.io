@@ -1,4 +1,25 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090711"><title>Celestial Syndicate | Mann Dahiya</title><style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Celestial Syndicate - A survival tycoon game developed in Unity. Game development case study by Mann Dahiya."
+  >
+
+  <meta name="theme-color" content="#090711">
+
+  <title>Celestial Syndicate | Mann Dahiya</title>
+
+  <style>
+
+    /* ===================================
+       GLOBAL STYLES
+    =================================== */
 
     :root {
       --bg: #090711;
@@ -21,6 +42,7 @@
     body {
       margin: 0;
       min-height: 100vh;
+
       background:
         radial-gradient(
           ellipse at 85% 12%,
@@ -44,11 +66,14 @@
 
     nav {
       padding: 24px 8%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      border-bottom: 1px solid rgba(183, 53, 237, 0.35);
+      border-bottom:
+        1px solid rgba(183, 53, 237, 0.35);
+
       background: rgba(9, 7, 17, 0.85);
     }
 
@@ -64,56 +89,52 @@
     nav a {
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.3s, text-shadow 0.3s;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: var(--cyan);
-      text-shadow: 0 0 12px var(--cyan);
     }
 
     /* ===================================
-       MAIN LAYOUT
+       MAIN CONTENT
     =================================== */
 
     main {
-      max-width: 1150px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 90px 24px;
+      padding: 80px 24px 110px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 48px;
+
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     /* ===================================
-       HERO INTRODUCTION
+       PROJECT HEADER
     =================================== */
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 65px;
-      min-height: 420px;
-    }
-
-    .hero-content {
-      flex: 1;
-      min-width: 0;
-    }
 
     .tag {
       color: var(--cyan);
+      font-size: 13px;
       font-weight: bold;
       letter-spacing: 2px;
-      font-size: 13px;
-
-      text-shadow:
-        0 0 12px rgba(0, 245, 233, 0.4);
     }
 
     h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.1;
-      margin: 22px 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
       letter-spacing: -2px;
+      margin: 20px 0;
 
       background: linear-gradient(
         90deg,
@@ -124,176 +145,96 @@
 
       -webkit-background-clip: text;
       background-clip: text;
+
       color: transparent;
     }
 
     p {
       color: var(--muted);
       line-height: 1.8;
-      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .intro {
+      max-width: 850px;
+      font-size: 17px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .meta-pill {
+      padding: 9px 14px;
+
+      color: var(--cyan);
+      font-size: 13px;
+
+      background: rgba(0, 245, 233, 0.04);
+
+      border:
+        1px solid rgba(0, 245, 233, 0.3);
+
+      border-radius: 7px;
     }
 
     /* ===================================
-       NEON BUTTON
+       SECTIONS
     =================================== */
 
-    .button {
-      display: inline-block;
-
-      background: linear-gradient(
-        135deg,
-        #a52de0,
-        #e143d7
-      );
-
-      color: #ffffff;
-      padding: 15px 28px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 24px;
-
-      box-shadow:
-        0 0 22px rgba(183, 53, 237, 0.3);
-
-      transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+    .detail-section {
+      margin-top: 75px;
     }
 
-    .button:hover {
-      transform: translateY(-3px);
-
-      box-shadow:
-        0 0 18px rgba(240, 77, 255, 0.6),
-        0 0 40px rgba(183, 53, 237, 0.25);
-    }
-
-    /* ===================================
-       PROFILE PHOTO
-    =================================== */
-
-    .hero-image {
-      width: 340px;
-      height: 340px;
-      flex-shrink: 0;
-    }
-
-    .hero-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center;
-
-      border-radius: 20px;
-      border: 2px solid var(--pink);
-
-      box-shadow:
-        0 0 18px rgba(240, 77, 255, 0.35),
-        0 0 55px rgba(183, 53, 237, 0.15);
-
-      transition:
-        transform 0.4s,
-        box-shadow 0.4s;
-    }
-
-    .hero-image img:hover {
-      transform: scale(1.025);
-
-      box-shadow:
-        0 0 25px rgba(240, 77, 255, 0.55),
-        0 0 65px rgba(183, 53, 237, 0.25);
-    }
-
-    /* ===================================
-       PROJECTS SECTION
-    =================================== */
-
-    section {
-      margin-top: 110px;
-      scroll-margin-top: 30px;
-    }
-
-    section h2 {
-      font-size: 34px;
-      margin-bottom: 35px;
+    .detail-section h2 {
+      font-size: 29px;
+      margin-bottom: 22px;
       padding-bottom: 15px;
 
       border-bottom:
         1px solid rgba(183, 53, 237, 0.35);
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-    }
-
-    /* ===================================
-       PROJECT CARDS
-    =================================== */
-
-    .project {
-      min-width: 0;
-
-      background: linear-gradient(
-        145deg,
-        #1b1129,
-        #110d1b
-      );
-
-      padding: 24px;
-      border-radius: 16px;
-
-      border:
-        1px solid rgba(183, 53, 237, 0.35);
-
-      transition:
-        transform 0.3s,
-        border-color 0.3s,
-        box-shadow 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-6px);
-      border-color: var(--pink);
-
-      box-shadow:
-        0 0 22px rgba(183, 53, 237, 0.18),
-        0 12px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .project h3 {
-      margin: 22px 0 12px;
+    .detail-section h3 {
+      font-size: 19px;
       color: var(--text);
-      font-size: 23px;
+      margin: 0 0 12px;
     }
 
-    .project p {
-      font-size: 15px;
+    .detail-section ul {
+      padding-left: 22px;
     }
 
-    .project strong {
-      color: var(--cyan);
+    .detail-section li {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 10px;
     }
 
     /* ===================================
-       YOUTUBE VIDEO EMBEDS
+       GAMEPLAY VIDEO
     =================================== */
 
     .video-container {
-      position: relative;
       width: 100%;
+      max-width: 950px;
+
       aspect-ratio: 16 / 9;
       overflow: hidden;
 
-      border-radius: 10px;
+      margin: 28px auto 0;
+
       background: #05030a;
+      border-radius: 14px;
 
       border:
-        1px solid rgba(0, 245, 233, 0.2);
+        1px solid rgba(183, 53, 237, 0.5);
+
+      box-shadow:
+        0 0 25px rgba(183, 53, 237, 0.12);
     }
 
     .video-container iframe {
@@ -303,27 +244,87 @@
       border: none;
     }
 
-    .project { display:flex; flex-direction:column; }
-    .project .project-link { margin-top:auto; align-self:flex-start; }
-    .project-link { display:inline-block; color:#fff; text-decoration:none; font-weight:bold; font-size:14px; padding:12px 18px; border-radius:8px; background:linear-gradient(135deg,#a52de0,#e143d7); }
-    .project-link:hover { box-shadow:0 0 18px rgba(240,77,255,.4); }
-    .project-preview { width:100%; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px; border:1px solid rgba(0,245,233,.25); border-radius:10px; background:radial-gradient(circle at 60% 35%,#34204e,#0c0916 70%); color:var(--cyan); padding:16px; }
-    .project-preview span { font-size:38px; }
-    .project-preview small { color:var(--muted); }
-    .back-link { color:var(--cyan); text-decoration:none; }
-    .detail-heading { margin-top:48px; }
-    .detail-section { margin-top:55px; }
-    .detail-section h2 { font-size:25px; }
-    .detail-section li { color:var(--muted); line-height:1.8; margin:7px 0; }
-    .gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-    .gallery img { display:block; width:100%; border-radius:12px; }
-    .gallery-placeholder { aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; border:1px dashed rgba(0,245,233,.5); border-radius:12px; color:var(--muted); text-align:center; padding:18px; }
-    .note { border-left:3px solid var(--cyan); padding:12px 16px; background:#171022; color:var(--muted); }
-    @media (max-width: 1050px) and (min-width: 769px) { .projects { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-    @media (max-width: 560px) { .gallery { grid-template-columns:1fr; } }
+    /* ===================================
+       TECHNICAL CONTRIBUTION CARDS
+    =================================== */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 20px;
+    }
+
+    .feature-card {
+      padding: 24px;
+
+      background: linear-gradient(
+        145deg,
+        #1b1129,
+        #110d1b
+      );
+
+      border:
+        1px solid rgba(183, 53, 237, 0.35);
+
+      border-radius: 14px;
+    }
+
+    .feature-card h3 {
+      color: var(--cyan);
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 14px;
+    }
 
     /* ===================================
-       MOBILE RESPONSIVE
+       CHALLENGE CARDS
+    =================================== */
+
+    .challenge-card {
+      margin-bottom: 20px;
+      padding: 24px;
+
+      background: rgba(23, 16, 34, 0.8);
+
+      border-left:
+        3px solid var(--purple);
+
+      border-radius: 8px;
+    }
+
+    .challenge-card h3 {
+      color: var(--text);
+    }
+
+    .challenge-card p {
+      margin-bottom: 0;
+    }
+
+    /* ===================================
+       SUMMARY
+    =================================== */
+
+    .summary {
+      padding: 26px;
+
+      background: rgba(0, 245, 233, 0.04);
+
+      border:
+        1px solid rgba(0, 245, 233, 0.25);
+
+      border-radius: 12px;
+    }
+
+    .summary p {
+      margin: 0;
+    }
+
+    /* ===================================
+       RESPONSIVE DESIGN
     =================================== */
 
     @media (max-width: 768px) {
@@ -333,53 +334,39 @@
       }
 
       main {
-        padding: 55px 20px;
+        padding: 55px 20px 80px;
       }
 
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 40px;
+      .detail-section {
+        margin-top: 55px;
       }
 
-      .hero-image {
-        width: min(100%, 340px);
-        height: auto;
-        aspect-ratio: 1 / 1;
-        align-self: center;
+      .detail-section h2 {
+        font-size: 25px;
       }
 
-      .projects {
+      .feature-grid {
         grid-template-columns: 1fr;
       }
 
-      section {
-        margin-top: 80px;
+      .feature-card,
+      .challenge-card {
+        padding: 20px;
       }
 
-      section h2 {
-        font-size: 28px;
-      }
     }
 
     @media (max-width: 480px) {
+
+      h1 {
+        font-size: 42px;
+      }
 
       .tag {
         font-size: 11px;
         letter-spacing: 1px;
       }
 
-      h1 {
-        font-size: 44px;
-      }
-
-      .project {
-        padding: 16px;
-      }
-
-      .project h3 {
-        font-size: 21px;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -388,12 +375,385 @@
         scroll-behavior: auto;
       }
 
-      .button,
-      .project,
-      .hero-image img,
       nav a {
         transition: none;
       }
+
     }
 
-  </style></head><body><nav><strong>Mann Dahiya</strong><a href="index.html#projects">Projects</a></nav><main><a class="back-link" href="index.html#projects">← Back to Featured Projects</a><div class="detail-heading"><div class="tag">UNITY • C# • GAME DEVELOPMENT</div><h1>Celestial Syndicate</h1></div><p>Celestial Syndicate is a survival tycoon game. Add a short, accurate description of the game's objective and core loop here.</p><section class="detail-section"><h2>About the Game</h2><p>Describe the player's objective, progression, and what makes the game engaging.</p></section><section class="detail-section"><h2>Features I Created</h2><p class="note">Add only features you personally developed, such as systems, UI, AI, saving, or optimization, once confirmed.</p></section><section class="detail-section"><h2>My Role &amp; Contributions</h2><p>Describe your responsibilities, the team setup, and the technical challenges you solved.</p></section><section class="detail-section"><h2>Screenshots</h2><div class="gallery"><div class="gallery-placeholder">Celestial Syndicate screenshot 1<br>To be added</div><div class="gallery-placeholder">Celestial Syndicate screenshot 2<br>To be added</div><div class="gallery-placeholder">Celestial Syndicate screenshot 3<br>To be added</div><div class="gallery-placeholder">Celestial Syndicate screenshot 4<br>To be added</div></div></section><section class="detail-section"><h2>Gameplay Video</h2><div class="project-preview"><strong>Celestial Syndicate gameplay video — to be added</strong><small>Replace with a YouTube iframe after uploading your footage</small></div></section></main></body></html>
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ===================================
+       NAVIGATION
+  =================================== -->
+
+  <nav>
+
+    <strong>Mann Dahiya</strong>
+
+    <a href="index.html#projects">
+      Projects
+    </a>
+
+  </nav>
+
+  <main>
+
+    <a
+      class="back-link"
+      href="index.html#projects"
+    >
+      ← Back to Featured Projects
+    </a>
+
+    <!-- ===================================
+         PROJECT INTRODUCTION
+    =================================== -->
+
+    <header>
+
+      <div class="tag">
+        UNITY • C# • GAME ARCHITECTURE • LEADERSHIP
+      </div>
+
+      <h1>Celestial Syndicate</h1>
+
+      <p class="intro">
+        A lunar survival tycoon game combining resource
+        management, base development, exploration, and
+        narrative-driven progression.
+
+        The project involved designing interconnected
+        gameplay systems, creating a moon-like environment,
+        and maintaining performance across a wide range
+        of devices.
+      </p>
+
+      <div class="meta-row">
+
+        <span class="meta-pill">
+          Game Architecture
+        </span>
+
+        <span class="meta-pill">
+          Gameplay Programming
+        </span>
+
+        <span class="meta-pill">
+          Technical Leadership
+        </span>
+
+        <span class="meta-pill">
+          Performance Optimization
+        </span>
+
+      </div>
+
+    </header>
+
+    <!-- ===================================
+         GAMEPLAY DEMONSTRATION
+    =================================== -->
+
+    <section class="detail-section">
+
+      <h2>Gameplay Demonstration</h2>
+
+      <div class="video-container">
+
+        <iframe
+          src="https://www.youtube.com/embed/0XBPq4W16Eo"
+          title="Celestial Syndicate Gameplay"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================
+         ABOUT THE GAME
+    =================================== -->
+
+    <section class="detail-section">
+
+      <h2>About the Game</h2>
+
+      <p>
+        Celestial Syndicate is a survival tycoon game
+        set on a moon-like world, where players collect
+        resources, restore and unlock buildings, expand
+        their base, and progress through story-driven
+        objectives.
+      </p>
+
+      <p>
+        Gameplay systems are interconnected. Resource
+        availability influences building progression,
+        while environmental events, missions, tutorials,
+        and narrative sequences shape the player's
+        experience.
+      </p>
+
+    </section>
+
+    <!-- ===================================
+         MY CONTRIBUTIONS
+    =================================== -->
+
+    <section class="detail-section">
+
+      <h2>My Contributions</h2>
+
+      <div class="feature-grid">
+
+        <!-- GAME ARCHITECTURE -->
+
+        <article class="feature-card">
+
+          <h3>Game Architecture & Standards</h3>
+
+          <p>
+            Designed the overall game architecture
+            and established coding standards and
+            conventions for the development team.
+          </p>
+
+        </article>
+
+        <!-- RESOURCE SYSTEM -->
+
+        <article class="feature-card">
+
+          <h3>Resource & Building Systems</h3>
+
+          <p>
+            Implemented resource collection, inventory
+            management, ScriptableObject-based building
+            data, unlocking requirements, damage,
+            and repair mechanics.
+          </p>
+
+        </article>
+
+        <!-- RESOURCE SPAWNING -->
+
+        <article class="feature-card">
+
+          <h3>Dynamic Resource Spawning</h3>
+
+          <p>
+            Developed rarity-weighted resource spawning,
+            terrain-aware placement, object pooling,
+            and progression-dependent resource availability.
+          </p>
+
+        </article>
+
+        <!-- TERRAIN -->
+
+        <article class="feature-card">
+
+          <h3>Lunar Terrain & Gameplay</h3>
+
+          <p>
+            Created the moon-like terrain, developed
+            terrain mesh export tooling, and implemented
+            player movement and jumping mechanics.
+          </p>
+
+        </article>
+
+        <!-- PROGRESSION -->
+
+        <article class="feature-card">
+
+          <h3>Progression & Persistence</h3>
+
+          <p>
+            Built gameplay progression systems,
+            tutorial and mission triggers,
+            and JSON-based save/load functionality
+            for persistent game state.
+          </p>
+
+        </article>
+
+        <!-- PERFORMANCE -->
+
+        <article class="feature-card">
+
+          <h3>Cross-Device Optimization</h3>
+
+          <p>
+            Optimized gameplay for low-end and
+            high-end devices, with automatic
+            graphics-quality selection based
+            on device specifications.
+          </p>
+
+        </article>
+
+        <!-- NARRATIVE -->
+
+        <article class="feature-card">
+
+          <h3>Narrative & Game Design</h3>
+
+          <p>
+            Developed the game's story, narrative
+            twists, dialogue, and progression-driven
+            events to connect gameplay with storytelling.
+          </p>
+
+        </article>
+
+        <!-- TEAM -->
+
+        <article class="feature-card">
+
+          <h3>Team & Creative Coordination</h3>
+
+          <p>
+            Coordinated implementation with developers,
+            artists, and sound designers while maintaining
+            technical consistency and the game's
+            overall creative direction.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================
+         DEVELOPMENT CHALLENGES
+    =================================== -->
+
+    <section class="detail-section">
+
+      <h2>Development Challenges</h2>
+
+      <!-- CHALLENGE 1 -->
+
+      <div class="challenge-card">
+
+        <h3>
+          01. Managing an Interconnected Codebase
+        </h3>
+
+        <p>
+          One of the biggest technical challenges was
+          maintaining a growing codebase where resource
+          management, building progression, saving,
+          missions, and world events depended on
+          one another.
+
+          A change in one system could affect several
+          others, making consistency and debugging
+          increasingly important.
+        </p>
+
+        <p>
+          I focused on maintaining common coding
+          conventions, separating responsibilities,
+          and managing the interactions between
+          gameplay systems to keep development
+          manageable as the project grew.
+        </p>
+
+      </div>
+
+      <!-- CHALLENGE 2 -->
+
+      <div class="challenge-card">
+
+        <h3>
+          02. Leading & Motivating the Team
+        </h3>
+
+        <p>
+          Beyond programming, keeping the team aligned
+          and motivated was a significant responsibility.
+
+          With multiple gameplay systems and creative
+          elements being developed simultaneously,
+          it was important to maintain clear direction
+          and consistent communication.
+        </p>
+
+        <p>
+          I worked on coordinating technical decisions,
+          communicating with designers, and helping
+          the team stay focused on the overall
+          vision of the game.
+        </p>
+
+      </div>
+
+      <!-- CHALLENGE 3 -->
+
+      <div class="challenge-card">
+
+        <h3>
+          03. Performance Across Different Devices
+        </h3>
+
+        <p>
+          Building a game with terrain, resource
+          spawning, and multiple active systems
+          required attention to performance,
+          especially on lower-end hardware.
+        </p>
+
+        <p>
+          I worked on optimization, object pooling,
+          resource limits, and device-based graphics
+          configurations to support different
+          hardware capabilities.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================
+         FINAL TAKEAWAY
+    =================================== -->
+
+    <section class="detail-section">
+
+      <h2>Project Takeaway</h2>
+
+      <div class="summary">
+
+        <p>
+          Celestial Syndicate was an opportunity
+          to work beyond individual gameplay features
+          and take responsibility for the larger
+          development process.
+
+          It strengthened my experience in game
+          architecture, systems programming,
+          optimization, storytelling, and technical
+          leadership while working with a
+          multidisciplinary team.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
