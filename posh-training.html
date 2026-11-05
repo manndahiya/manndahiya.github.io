@@ -121,6 +121,18 @@
       background: rgba(0, 245, 233, .04);
     }
     .takeaway p { margin: 0; }
+
+    .scenario-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .scenario-card {
+      padding: 22px;
+      border: 1px solid rgba(183, 53, 237, .35);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #1b1129, #110d1b);
+    }
+    .scenario-card .scenario-number { color: var(--cyan); font-size: 12px; font-weight: bold; letter-spacing: 1.5px; }
+    .scenario-card h3 { margin: 10px 0 8px; font-size: 18px; }
+    .scenario-card p { margin: 0; font-size: 14px; }
+    @media (max-width: 650px) { .scenario-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       nav { padding: 20px 6%; }
       main { padding: 55px 20px 80px; }
@@ -148,7 +160,7 @@
       <h1>POSH Workplace Training Simulation</h1>
       <p class="intro">
         An interactive training experience about workplace conduct and POSH (Prevention of Sexual Harassment).
-        Players navigate realistic conversations, select responses, and receive feedback based on their decisions.
+        Players explore four workplace-conduct scenarios in different environments, choose responses during conversations, and receive feedback on their decisions. Completed scenarios unlock the next experience, with progress saved between sessions.
         I worked on the dialogue experience, character presentation, and lighting of the 3D environments.
       </p>
       <div class="meta-row">
@@ -161,16 +173,30 @@
 
     <section>
       <h2>Gameplay Demonstration</h2>
-      <!-- Replace this placeholder when the YouTube video URL is available.
-           Example:
-           <div class="video-container">
-             <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="POSH Training Gameplay" loading="lazy" allowfullscreen></iframe>
-           </div>
-      -->
-      <div class="video-container video-placeholder">
-        <span aria-hidden="true">▶</span>
-        <strong>POSH Training Gameplay</strong>
-        <small>YouTube demonstration to be added</small>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/L_fhrdbHyDE"
+          title="POSH Workplace Training Simulation Gameplay"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+
+    <section>
+      <h2>Four Interactive Training Scenarios</h2>
+      <p>
+        Players select scenarios from different environments and complete them one by one.
+        Finishing a scenario unlocks the next, while saved progress tracks completed levels.
+      </p>
+      <div class="scenario-grid">
+        <article class="scenario-card"><span class="scenario-number">SCENARIO 01</span><h3>Understanding Sexual Harassment</h3><p>Recognizing inappropriate conduct and responding to workplace situations.</p></article>
+        <article class="scenario-card"><span class="scenario-number">SCENARIO 02</span><h3>Digital Boundaries</h3><p>Navigating appropriate and inappropriate behavior in digital communication.</p></article>
+        <article class="scenario-card"><span class="scenario-number">SCENARIO 03</span><h3>Verbal Boundaries</h3><p>Identifying and responding to uncomfortable or inappropriate verbal interactions.</p></article>
+        <article class="scenario-card"><span class="scenario-number">SCENARIO 04</span><h3>What Is Not Harassment</h3><p>Distinguishing harassment from other workplace interactions through contextual choices.</p></article>
       </div>
     </section>
 
@@ -191,7 +217,7 @@
         </article>
         <article class="feature-card">
           <h3>Scenario Feedback &amp; Progress</h3>
-          <p>Implemented response-based narration and visual completion indicators for training scenarios using saved progression states.</p>
+          <p>Implemented saved scene progression and unlock indicators. At the end of each scenario, the player’s own character evaluates their choices and delivers a voiced correct, incorrect, or neutral response—an ending presentation inspired by the character reactions in the Batman: Arkham games.</p>
         </article>
         <article class="feature-card">
           <h3>Baked Environment Lighting</h3>
@@ -230,7 +256,7 @@
       <h2>Project Takeaway</h2>
       <div class="takeaway">
         <p>
-          The project combined gameplay programming with technical presentation work.
+          The project combined gameplay programming, sequential scenario progression, and technical presentation work.
           It strengthened my ability to build interactive narrative systems, synchronize
           voice and character animation, and troubleshoot baked-lighting issues in Unity.
         </p>
