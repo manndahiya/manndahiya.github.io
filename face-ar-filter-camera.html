@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+  <meta name="description" content="Face AR Filter Camera - Unity WebAR experience and API integration by Mann Dahiya.">
+  <title>Face AR Filter Camera | Mann Dahiya</title>
+  <style>
+    :root {
+      --bg: #090711;
+      --surface: #171022;
+      --purple: #b735ed;
+      --pink: #f04dff;
+      --cyan: #00f5e9;
+      --text: #f5f0ff;
+      --muted: #b9b2c9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 85% 12%, rgba(147, 40, 190, .15), transparent 38%),
+        radial-gradient(ellipse at 10% 65%, rgba(0, 245, 233, .05), transparent 35%),
+        var(--bg);
+    }
+    nav {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(183, 53, 237, .35);
+      background: rgba(9, 7, 17, .85);
+    }
+    nav strong { font-size: 21px; letter-spacing: 1px; }
+    nav a, .back-link { color: var(--cyan); text-decoration: none; }
+    nav a:hover, .back-link:hover { text-decoration: underline; }
+    main { max-width: 1100px; margin: 0 auto; padding: 80px 24px 110px; }
+    .back-link { display: inline-block; margin-bottom: 48px; }
+    .tag { color: var(--cyan); font-size: 13px; font-weight: bold; letter-spacing: 2px; }
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 20px 0;
+      background: linear-gradient(90deg, #fff 10%, #e9a4ff 65%, #f04dff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    p { color: var(--muted); line-height: 1.8; font-size: 16px; }
+    .intro { max-width: 850px; font-size: 17px; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .meta-pill {
+      padding: 9px 14px;
+      color: var(--cyan);
+      font-size: 13px;
+      background: rgba(0, 245, 233, .04);
+      border: 1px solid rgba(0, 245, 233, .3);
+      border-radius: 7px;
+    }
+    section { margin-top: 75px; }
+    section h2 {
+      font-size: 29px;
+      margin-bottom: 22px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(183, 53, 237, .35);
+    }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .feature-card {
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(183, 53, 237, .35);
+      background: linear-gradient(145deg, #1b1129, #110d1b);
+    }
+    .feature-card h3 { color: var(--cyan); font-size: 19px; margin: 0 0 12px; }
+    .feature-card p { margin: 0; font-size: 14px; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    .gallery figure { min-width: 0; margin: 0; }
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      background: #05030a;
+      border-radius: 12px;
+      border: 1px solid rgba(183, 53, 237, .45);
+    }
+    .gallery figcaption { color: var(--muted); text-align: center; font-size: 13px; margin-top: 12px; }
+    .challenge {
+      padding: 24px;
+      border-left: 3px solid var(--purple);
+      border-radius: 8px;
+      background: rgba(23, 16, 34, .8);
+    }
+    .challenge h3 { margin: 0 0 12px; font-size: 19px; }
+    .challenge p { margin: 0; }
+    @media (max-width: 850px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 650px) {
+      nav { padding: 20px 6%; }
+      main { padding: 55px 20px 80px; }
+      section { margin-top: 55px; }
+      section h2 { font-size: 25px; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Mann Dahiya</strong>
+    <a href="index.html#projects">Projects</a>
+  </nav>
+  <main>
+    <a class="back-link" href="index.html#projects">← Back to Featured Projects</a>
+    <header>
+      <div class="tag">UNITY • C# • WEBAR • FACE TRACKING</div>
+      <h1>Face AR Filter Camera</h1>
+      <p class="intro">
+        An interactive WebAR camera experience where users choose a team,
+        swipe between its face filters, capture a photo, and optionally save
+        or submit the result. The experience combines real-time face tracking,
+        responsive filter navigation, and API-based photo submission.
+      </p>
+      <div class="meta-row">
+        <span class="meta-pill">WebAR Foundation</span>
+        <span class="meta-pill">Face Tracking</span>
+        <span class="meta-pill">Swipeable Filter UI</span>
+        <span class="meta-pill">REST API Integration</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>What I Developed</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Team-Based Face Filters</h3>
+          <p>Connected team selection to the appropriate face-filter materials using WebAR Foundation and a team/material mapping.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Swipe &amp; Snap Navigation</h3>
+          <p>Built a custom ScrollRect controller with swipe thresholds, smooth snapping, active-filter emphasis, and a reusable selection ring.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Photo Capture &amp; Local Save</h3>
+          <p>Implemented the capture, preview, retry, confirmation and local-save flow, including the selected team’s photo frame overlay.</p>
+        </article>
+        <article class="feature-card">
+          <h3>API Submission &amp; Form Validation</h3>
+          <p>Validated name, email and consent fields; packaged the captured image as Base64-encoded PNG within JSON; and submitted it through UnityWebRequest.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>App Screenshots</h2>
+      <p>Portrait (9:16) views of the selection and photo experience.</p>
+      <div class="gallery">
+        <figure>
+          <img src="images/face-ar-1.png" alt="Face AR team selection" loading="lazy">
+          <figcaption>Team Selection</figcaption>
+        </figure>
+        <figure>
+          <img src="images/face-ar-2.png" alt="Face AR live filters" loading="lazy">
+          <figcaption>Live Face Filters</figcaption>
+        </figure>
+        <figure>
+          <img src="images/face-ar-3.png" alt="Face AR photo preview" loading="lazy">
+          <figcaption>Photo Preview</figcaption>
+        </figure>
+        <figure>
+          <img src="images/face-ar-4.png" alt="Face AR save or submission flow" loading="lazy">
+          <figcaption>Save / Submission</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Development Challenges</h2>
+      <div class="challenge">
+        <h3>Keeping Camera, Filters and Capture in Sync</h3>
+        <p>
+          The main integration challenge was coordinating the active team,
+          swipable filter selection, camera capture, preview and submission states.
+          I managed these transitions using UI events, filter-state changes and
+          a dedicated photo manager so users could retake a photo without losing
+          the ability to browse filters.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
